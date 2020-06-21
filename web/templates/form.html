@@ -1,0 +1,25 @@
+<ul>
+	{% for a in articles %}
+		<li>{{a.article_url}}</li>
+	{% endfor %}
+</ul>
+
+<ul>
+	{% for a in articles %}
+	<li>
+		<form action="/map-user-post" method="POST">
+			<input type="hidden"
+				   name="result_id"
+				   value="{{a.article_id}}"/>
+			<select name="user_id">
+				{% for u in users %}
+				<option value="{{u.user_id}}">u.user_name</option>
+				{% endfor %}
+			</select>
+			<input type="submit" value="Save"/>
+		</form>
+		{a.created_on}
+		{a.url}
+	{% endfor %}
+	</li>
+</ul>
