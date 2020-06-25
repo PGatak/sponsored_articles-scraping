@@ -17,6 +17,7 @@ def add_start_urls(connection, start_urls):
 
     with connection.cursor() as cur:
         for service_name, records in start_urls.items():
+
             for record in records:
                 for key, link in record.items():
                     record = {"service_name": service_name,

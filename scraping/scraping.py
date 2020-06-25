@@ -34,6 +34,7 @@ def extract_urls(text, service_name, current_url):
         if article_url and not article_url.startswith("#"):
             article_url = urljoin(current_url, article_url)
             record = {"article_url": article_url, "service_name": service_name}
+            print("dddd", record)
             urls.append(record)
     return urls
 
@@ -52,6 +53,7 @@ if __name__ == "__main__":
         current_url = task["start_url_name"]
         service_name = task["service_name"]
         extracted_urls = []
+        #print("hhjk", current_url)
 
         try:
             response = session.get(current_url, timeout=TIMEOUT)
@@ -62,24 +64,24 @@ if __name__ == "__main__":
             print(e)
             continue
 
-    for new_article in extracted_urls:
-        url = new_article['article_url']
-        if articles.is_article_old(connection, new_article):
-            print("old", url)
-            continue
+        for new_article in extracted_urls:
+            url = new_article['article_url']
+            if articles.is_article_old(connection, new_article):
+                print("old", url)
+                continue
 
-        created = articles.add_article(connection, new_article)
+            created = articles.add_article(connection, new_article)
 
-        # article is new
-        try:
-            print("GET", url)
-            response = session.get(url, timeout=(3, TIMEOUT))
-            soup = BeautifulSoup(response.text, "lxml")
-            tags = match_tags(soup.find("body").text)
-            if tags:
-                print("|______> MATCHED", tags)
-                articles.add_article_tags(
-                    connection, created["article_id"], tags)
-        except Exception as e:
-            print(e)
-            continue
+            # article is new
+            try:
+                print("GET", url)
+                response = session.get(url, timeout=(3, TIMEOUT))
+                soup = BeautifulSoup(response.text, "lxml")
+                tags = match_tags(soup.find("body").text)
+                if tags:
+                    print("|______> MATCHED", tags)
+                    articles.add_article_tags(
+                        connection, created["article_id"], tags)
+            except Exception as e:
+                print(e)
+                continue
