@@ -53,8 +53,49 @@ dziennikwschodni = [
 
 ]
 
+radiolublin = [
+    {"url": "https://radio.lublin.pl/"},
+    {"url": "https://radio.lublin.pl/kategoria/wiadomosci/biala-podlaska/"},
+    {"url": "https://radio.lublin.pl/kategoria/wiadomosci/chelm/"},
+    {"url": "https://radio.lublin.pl/kategoria/wiadomosci/lubartow/"},
+    {"url": "https://radio.lublin.pl/kategoria/wiadomosci/lublin/"},
+    {"url": "https://radio.lublin.pl/kategoria/wiadomosci/pulawy/"},
+    {"url": "https://radio.lublin.pl/kategoria/wiadomosci/zamosc/"},
+    {"url": "https://radio.lublin.pl/kategoria/redakcje/kultura/"},
+    {"url": "https://radio.lublin.pl/kategoria/redakcje/muzyka/"},
+    {"url": "https://radio.lublin.pl/kategoria/redakcje/publicystyka/"},
+    {"url": "https://radio.lublin.pl/kategoria/redakcje/reportaz/"},
+    {"url": "https://radio.lublin.pl/kategoria/koncerty/"},
+    {"url": "https://radio.lublin.pl/kategoria/multimedia/"},
+    {"url": "https://radio.lublin.pl/kalendarium/"},
+    {"url": "https://radio.lublin.pl/mapa/"},
+    {"url": "https://radio.lublin.pl/addevent/"},
+    {"url": "https://radio.lublin.pl/od-a-do-z/"},
+    {"url": "https://radio.lublin.pl/ramowka/"},
+    {"url": "https://radio.lublin.pl/ludzie-radia/"},
+    {"url": "https://radio.lublin.pl/historia/"},
+    {"url": "https://radio.lublin.pl/partnerzy/"},
+    {"url": "https://radio.lublin.pl/reklama/"},
+    {"url": "https://radio.lublin.pl/patronaty-wniosek/"},
+    {"url": "https://radio.lublin.pl/regulaminy/"},
+    {"url": "https://radio.lublin.pl/kontakt/"},
+    {"url": "https://radio.lublin.pl/kategoria/konkurs/"},
+    {"url": "https://radio.lublin.pl/wydarzenia/kategoria/patronaty/"},
+    {"url": "https://radio.lublin.pl/lublista/"},
+    {"url": "https://radio.lublin.pl/#social"},
+]
+
+lublin112 = [
+    {"url": "https://www.lublin112.pl/"},
+    {"url": "https://www.lublin112.pl/category/wiadomosci-z-lublina/"},
+    {"url": "https://www.lublin112.pl/category/wiadomosci-z-regionu/"},
+    {"url": "https://info112.pl/"},
+    {"url": "https://www.lublin112.pl/co-gdzie-kiedy/"}
+]
 
 all_start_urls = {"spottedlublin": spottedlublin,
                   "kurierlubelski": kurierlubelski,
-                  "dziennikwschodni": dziennikwschodni
+                  "dziennikwschodni": dziennikwschodni,
+                  "radiolublin": radiolublin,
+                  "lublin112": lublin112
                   }

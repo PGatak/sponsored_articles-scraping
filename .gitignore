@@ -1,3 +1,4 @@
 .idea/
 venv/
 common/db/__pycache__/
+scraping/__pycache__/*
