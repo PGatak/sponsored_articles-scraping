@@ -5,7 +5,8 @@ spottedlublin = [
     {"url": "https://spottedlublin.pl/wiadomosci/wiadomosci-z-polski/"},
     {"url": "https://spottedlublin.pl/wydarzenia/"},
     {"url": "https://spottedlublin.pl/porady/"},
-    {"url": "https://spottedlublin.pl/reklama2/"}
+    {"url": "https://spottedlublin.pl/reklama2/"},
+    {"url": "https://spottedlublin.pl/"}
 ]
 
 kurierlubelski = [
@@ -26,14 +27,8 @@ kurierlubelski = [
     {"url": "https://kurierlubelski.pl/zdrowie/"},
     {"url": "https://kurierlubelski.pl/strefa-agro/"},
     {"url": "https://kurierlubelski.pl/kultura/"},
-    {"url": "https://kurierlubelski.pl/sport/motor-lublin/"},
-    {"url": "https://kurierlubelski.pl/sport/gornik-leczna/"},
-    {"url": "https://kurierlubelski.pl/sport/mks/"},
-    {"url": "https://kurierlubelski.pl/sport/azoty/"},
-    {"url": "https://kurierlubelski.pl/sport/start-lublin/"},
-    {"url": "https://kurierlubelski.pl/sport/zuzel/"},
-    {"url": "https://kurierlubelski.pl/sport/azs-umcs/"},
-    {"url": "https://kurierlubelski.pl/sport/biegi-i-rekreacja/"},
+    {"url": "https://kurierlubelski.pl/artykuly-sponsorowane/"},
+    {"url": "https://kurierlubelski.pl/ogloszenia/34357,1754,fm,pk.html"}
 ]
 
 dziennikwschodni = [
@@ -50,6 +45,7 @@ dziennikwschodni = [
     {"url": "https://www.dziennikwschodni.pl/co-gdzie-kiedy/"},
     {"url": "https://www.dziennikwschodni.pl/biznes/"},
     {"url": "https://www.dziennikwschodni.pl/ogloszenia/"},
+    {"url": "https://www.dziennikwschodni.pl/artykuly-sponsorowane/"}
 
 ]
 
@@ -93,9 +89,31 @@ lublin112 = [
     {"url": "https://www.lublin112.pl/co-gdzie-kiedy/"}
 ]
 
+lubelski_pl = [
+    {"url": "https://lubelski.pl/author/reklama/"},
+    {"url": "https://lubelski.pl"},
+    {"url": "https://lubelski.pl/category/imprezy/"},
+    {"url": "https://lubelski.pl/category/imprezy/spotkanie/"}
+]
+
+expresslubelski = [
+    {"url": "https://expresslubelski.pl/"},
+    {"url": "https://expresslubelski.pl/category/artykul-partnerski/"},
+    {"url": ""},
+    {"url": ""},
+    {"url": ""},
+    {"url": ""},
+    {"url": ""},
+    {"url": ""},
+    {"url": ""},
+    {"url": ""},
+]
+
 all_start_urls = {"spottedlublin": spottedlublin,
                   "kurierlubelski": kurierlubelski,
                   "dziennikwschodni": dziennikwschodni,
                   "radiolublin": radiolublin,
-                  "lublin112": lublin112
+                  "lublin112": lublin112,
+                  "lubelski_pl": lubelski_pl,
+                  "expresslubelski": expresslubelski
                   }

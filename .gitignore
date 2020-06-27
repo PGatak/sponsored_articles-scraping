@@ -2,3 +2,5 @@
 venv/
 common/db/__pycache__/
 scraping/__pycache__/*
+__pycache__/
+__pychache__/*

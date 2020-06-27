@@ -3,9 +3,16 @@ import re
 
 TAG_PATTERNS = {
     "SPONSORED": [
-        "(artyk|publik).* spons.*",
-        "sponsorowan.*",
+        "(artyk|publik).* spons.*"
+    ],
+    "sponsorowan": [
+        "sponsorowan.*"
+    ],
+    "reklamowy.*": [
         "reklamowy.*"
+    ],
+    "partnerski": [
+        "artykuł partnerski.*"
     ]
 }
 
