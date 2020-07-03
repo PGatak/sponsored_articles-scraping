@@ -98,15 +98,7 @@ lubelski_pl = [
 
 expresslubelski = [
     {"url": "https://expresslubelski.pl/"},
-    {"url": "https://expresslubelski.pl/category/artykul-partnerski/"},
-    {"url": ""},
-    {"url": ""},
-    {"url": ""},
-    {"url": ""},
-    {"url": ""},
-    {"url": ""},
-    {"url": ""},
-    {"url": ""},
+    {"url": "https://expresslubelski.pl/category/artykul-partnerski/"}
 ]
 
 all_start_urls = {"spottedlublin": spottedlublin,
