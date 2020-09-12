@@ -2,8 +2,6 @@
 
 
 date
-ls
 echo "RUN"
-python --version
 
 make scraping

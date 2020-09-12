@@ -1,14 +1,12 @@
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 import requests
-from start_urls import all_start_urls
 
-from common.db import create_connection
-from common.db import (
-    services,
-    articles,
-    urls
-)
+from start_urls import all_start_urls
+from db import (create_connection,
+                articles as articles_api,
+                services as services_api,
+                urls as urls_api)
 from matchers import match_tags
 
 UA = (
@@ -17,7 +15,6 @@ UA = (
 )
 
 TIMEOUT = 30
-
 
 connection = create_connection()
 
@@ -33,44 +30,53 @@ def extract_urls(text, service_name, current_url):
         article_url = link.attrs.get("href", "")
         if article_url and not article_url.startswith("#"):
             article_url = urljoin(current_url, article_url)
-            record = {"article_url": article_url, "service_name": service_name}
-            print("dddd", record)
+            record = {"article_url": article_url,
+                      "service_name": service_name}
             urls.append(record)
+
     return urls
 
 
 if __name__ == "__main__":
-    services.add_services(connection, all_start_urls)
-    urls.add_start_urls(connection, all_start_urls)
-
-    urls = urls.get_start_urls(connection)
-    # print([dict(r) for r in urls])
-
+    services_api.add_services(connection, all_start_urls)
+    urls_api.add_start_urls(connection, all_start_urls)
+    urls = urls_api.get_start_urls(connection)
 
     while urls:
         task = urls.pop(0)
-        # print(task)
         current_url = task["start_url_name"]
         service_name = task["service_name"]
         extracted_urls = []
-        #print("hhjk", current_url)
+        response = None
 
         try:
             response = session.get(current_url, timeout=TIMEOUT)
+        except requests.exceptions.RequestException as e:
+            print(e)
+            continue
+        if not response.ok:
+            continue
+
+        try:
             extracted_urls = extract_urls(response.text,
                                           service_name,
                                           current_url)
         except Exception as e:
+            # catching all exceptions to continue anyway
             print(e)
             continue
 
         for new_article in extracted_urls:
             url = new_article['article_url']
-            if articles.is_article_old(connection, new_article):
+
+            if articles_api.is_article_old(connection, new_article):
                 print("old", url)
                 continue
 
-            created = articles.add_article(connection, new_article)
+            if ("/sport/" or "koronawirus" or "/ogloszenia/") in url:
+                continue
+
+            created = articles_api.add_article(connection, new_article)
 
             # article is new
             try:
@@ -80,7 +86,7 @@ if __name__ == "__main__":
                 tags = match_tags(soup.find("body").text)
                 if tags:
                     print("|______> MATCHED", tags)
-                    articles.add_article_tags(
+                    articles_api.add_article_tags(
                         connection, created["article_id"], tags)
             except Exception as e:
                 print(e)

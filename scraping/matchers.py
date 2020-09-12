@@ -1,6 +1,5 @@
 import re
 
-
 TAG_PATTERNS = {
     "SPONSORED": [
         "(artyk|publik).* spons.*"
@@ -16,11 +15,11 @@ TAG_PATTERNS = {
     ]
 }
 
-
 # compile all regexes (optimisation):
 for tag, regexes in TAG_PATTERNS.items():
     TAG_PATTERNS[tag] = [re.compile(r, re.I) for r in regexes
-    ]
+                         ]
+    print(TAG_PATTERNS)
 
 
 def match_tags(text):

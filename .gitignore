@@ -1,6 +1,6 @@
 .idea/
 venv/
-common/db/__pycache__/
-scraping/__pycache__/*
-__pycache__/
-__pychache__/*
+*.pyc
+*.swp
+*/__pycache__/*
+scraping/__pycache__/start_urls.cpython-36.pyc
